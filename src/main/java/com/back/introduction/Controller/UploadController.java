@@ -15,6 +15,9 @@ public class UploadController {
     @Autowired
     private UploadService uploadService;
 
+    /**
+     * 上传自我介绍书
+     */
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ApiResponse uploadResume(@RequestParam("file") MultipartFile file,
                                     @RequestParam("userId") Long userId) {
@@ -35,5 +38,23 @@ public class UploadController {
         } catch (Exception e) {
             return ApiResponse.error("文件上传失败: " + e.getMessage());
         }
+    }
+
+    /**
+     * 更新收藏状态
+     */
+    @PatchMapping("/{fileId}/favorite")
+    public ApiResponse updateFavoriteStatus(@PathVariable Long fileId,
+                                            @RequestParam("favorite") boolean favorite) {
+        return uploadService.updateFavoriteStatus(fileId, favorite);
+    }
+
+    /**
+     * 更新分类标签
+     */
+    @PatchMapping("/{fileId}/category")
+    public ApiResponse updateCategory(@PathVariable Long fileId,
+                                      @RequestParam("category") String category) {
+        return uploadService.updateCategory(fileId, category);
     }
 }

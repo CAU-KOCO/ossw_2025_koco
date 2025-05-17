@@ -12,10 +12,12 @@ public class UserTest {
 
         user.setEmail("test@example.com");
         user.setPassword("secure123");
+        user.setUsername("TestUser");
 
-        assertNull(user.getId()); // id 由数据库生成为 null
+        assertNull(user.getId()); // id 应由数据库自动生成
         assertEquals("test@example.com", user.getEmail());
         assertEquals("secure123", user.getPassword());
+        assertEquals("TestUser", user.getUsername());
     }
 
     @Test
@@ -25,8 +27,25 @@ public class UserTest {
 
         User user = new User(email, password);
 
-        assertNull(user.getId()); // id 应为 null
+        assertNull(user.getId());
         assertEquals(email, user.getEmail());
         assertEquals(password, user.getPassword());
+
+        // 默认 username 为 null（仅在 setter 中赋值）
+        assertNull(user.getUsername());
+    }
+
+    @Test
+    void testUsernameUpdate() {
+        User user = new User();
+        user.setUsername("NewUsername");
+        assertEquals("NewUsername", user.getUsername());
+    }
+
+    @Test
+    void testPasswordChange() {
+        User user = new User("user@sample.com", "oldPass");
+        user.setPassword("newPass");
+        assertEquals("newPass", user.getPassword());
     }
 }

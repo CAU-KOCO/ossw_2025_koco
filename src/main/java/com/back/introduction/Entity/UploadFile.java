@@ -1,6 +1,5 @@
 package com.back.introduction.Entity;
 
-
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
@@ -21,6 +20,10 @@ public class UploadFile {
     private String filePath;
 
     private LocalDateTime uploadTime;
+
+    private boolean isFavorite = false;     // 是否被收藏，默认 false
+
+    private String category;                // 分类标签（如 “求职”、“交换留学”等）
 
     // Getter 和 Setter
     public Long getId() {
@@ -69,5 +72,21 @@ public class UploadFile {
 
     public void setUploadTime(LocalDateTime uploadTime) {
         this.uploadTime = uploadTime;
+    }
+
+    public boolean isFavorite() {
+        return isFavorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        isFavorite = favorite;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

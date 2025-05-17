@@ -15,7 +15,8 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    // 构造方法
+    private String username;
+
     public User() {}
 
     public User(String email, String password) {
@@ -23,10 +24,21 @@ public class User {
         this.password = password;
     }
 
-    // getter & setter
+    public User(String email, String password, String username) {
+        this.email = email;
+        this.password = password;
+        this.username = username;
+    }
+
+    // Getter 和 Setter
     public Long getId() {
         return id;
     }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
 
     public String getEmail() {
         return email;
@@ -42,5 +54,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }
