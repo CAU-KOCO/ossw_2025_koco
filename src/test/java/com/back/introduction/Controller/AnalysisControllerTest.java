@@ -24,9 +24,9 @@ public class AnalysisControllerTest {
 
     @Test
     void testAnalyzeResume_returnsReservedMessage() throws Exception {
-        // 1. 构造请求对象（可以空字段，因为只是占位接口）
+        // 1. 构造请求对象（可以空字段，只占位接口）
         AnalysisRequest dummyRequest = new AnalysisRequest();
-        // 你可以设置 request 字段，如果 AnalysisRequest 有必填字段的话
+        // 若 AnalysisRequest 有必填字段，可设置 request 字段
 
         // 2. 执行 POST 请求
         mockMvc.perform(post("/api/analysis/generate")
