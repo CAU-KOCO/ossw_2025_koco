@@ -36,3 +36,7 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+# 允许追踪 test 目录中的 Java 文件
+!test/
+!test/**/*
