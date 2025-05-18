@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="03849a9a-b28b-475c-b5c0-f437e1f68826" name="更改" comment="add file" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="group-origin/Backend" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2wyqAE2eFRUpzI6kCmfN4m30osB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="openDirectoriesWithSingleClick" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "JUnit.AnalysisControllerTest.executor": "Run",
+    "JUnit.AnalysisRequestTest.executor": "Run",
+    "JUnit.AuthControllerTest.executor": "Run",
+    "JUnit.AuthServiceTest.executor": "Run",
+    "JUnit.AuthServiceTest.testRegister_Success.executor": "Run",
+    "JUnit.FeedbackControllerTest.executor": "Run",
+    "JUnit.FeedbackRepositoryTest.executor": "Run",
+    "JUnit.FeedbackRequestTest.executor": "Run",
+    "JUnit.FeedbackServiceTest.executor": "Run",
+    "JUnit.FeedbackTest.executor": "Run",
+    "JUnit.HistoryControllerTest.executor": "Run",
+    "JUnit.HistoryServiceTest.executor": "Run",
+    "JUnit.LoginRequestTest.executor": "Run",
+    "JUnit.RegisterRequestTest.executor": "Run",
+    "JUnit.UploadControllerTest.executor": "Run",
+    "JUnit.UploadFileRepositoryTest.executor": "Run",
+    "JUnit.UploadFileTest.executor": "Run",
+    "JUnit.UploadServiceTest.executor": "Run",
+    "JUnit.UserControllerTest.executor": "Run",
+    "JUnit.UserControllerTest.testUpdateUserInfo_success.executor": "Run",
+    "JUnit.UserRepositoryTest.executor": "Run",
+    "JUnit.UserTest.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.AppApplication.executor": "Run",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "Backend",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "E:/Apps/Self-introduction/src/main/java/com/back/introduction",
+    "last_opened_file_path": "E:/Apps/Self-introduction/src/main/java/com/back/introduction",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.back.introduction" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.UploadServiceTest">
+    <configuration name="HistoryServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Self-introduction" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.back.introduction.Service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.back.introduction.Service" />
+      <option name="MAIN_CLASS_NAME" value="com.back.introduction.Service.HistoryServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UploadFileTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Self-introduction" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.back.introduction.Entity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.back.introduction.Entity" />
+      <option name="MAIN_CLASS_NAME" value="com.back.introduction.Entity.UploadFileTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UploadServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Self-introduction" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.back.introduction.Service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.back.introduction.Service" />
+      <option name="MAIN_CLASS_NAME" value="com.back.introduction.Service.UploadServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserControllerTest.testUpdateUserInfo_success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Self-introduction" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.back.introduction.Controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.back.introduction.Controller" />
+      <option name="MAIN_CLASS_NAME" value="com.back.introduction.Controller.UserControllerTest" />
+      <option name="METHOD_NAME" value="testUpdateUserInfo_success" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Self-introduction" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.back.introduction.Entity.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.back.introduction.Entity" />
+      <option name="MAIN_CLASS_NAME" value="com.back.introduction.Entity.UserTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Self-introduction" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.back.introduction.AppApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.HistoryServiceTest" />
+      <item itemvalue="JUnit.UploadFileTest" />
+      <item itemvalue="JUnit.UploadServiceTest" />
+      <item itemvalue="JUnit.UserControllerTest.testUpdateUserInfo_success" />
+      <item itemvalue="JUnit.UserTest" />
+      <item itemvalue="Spring Boot.AppApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UploadServiceTest" />
+        <item itemvalue="JUnit.HistoryServiceTest" />
+        <item itemvalue="JUnit.UserTest" />
+        <item itemvalue="JUnit.UploadFileTest" />
+        <item itemvalue="JUnit.UserControllerTest.testUpdateUserInfo_success" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="03849a9a-b28b-475c-b5c0-f437e1f68826" name="更改" comment="" />
+      <created>1747024019417</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1747024019417</updated>
+      <workItem from="1747024020552" duration="3958000" />
+      <workItem from="1747052244100" duration="198000" />
+      <workItem from="1747052499353" duration="3171000" />
+      <workItem from="1747195167938" duration="3054000" />
+      <workItem from="1747221721100" duration="1781000" />
+      <workItem from="1747348505306" duration="2024000" />
+      <workItem from="1747437314049" duration="7078000" />
+      <workItem from="1747447171451" duration="476000" />
+      <workItem from="1747455921378" duration="8904000" />
+    </task>
+    <task id="LOCAL-00001" summary="test">
+      <option name="closed" value="true" />
+      <created>1747457066603</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1747457066603</updated>
+    </task>
+    <task id="LOCAL-00002" summary="test">
+      <option name="closed" value="true" />
+      <created>1747458653314</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747458653314</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add test file">
+      <option name="closed" value="true" />
+      <created>1747460263876</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747460263876</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add file">
+      <option name="closed" value="true" />
+      <created>1747608403066</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1747608403066</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="group-origin/Backend" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="test" />
+    <MESSAGE value="add test file" />
+    <MESSAGE value="add file" />
+    <option name="LAST_COMMIT_MESSAGE" value="add file" />
+  </component>
+</project>
