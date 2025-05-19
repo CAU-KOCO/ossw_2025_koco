@@ -8,8 +8,12 @@ class FeedbackItem(BaseModel):
     sentence: str
     comment: str
 
-class ResumeAnalysisResult(BaseModel):
+class SentenceAnalysisItem(BaseModel):
+    sentence: str
+    feedback: List[str]
     keywords: List[str]
-    feedback: List[FeedbackItem]
+
+class ResumeAnalysisResult(BaseModel):
+    sentences: List[SentenceAnalysisItem]
     grammar_issues: List[str]
     suggested_sentences: List[str]
