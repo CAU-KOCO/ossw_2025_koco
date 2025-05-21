@@ -4,6 +4,8 @@ from keybert import KeyBERT
 from sentence_transformers import SentenceTransformer
 import traceback
 import kss
+import json
+import os
 
 
 sbert_model = SentenceTransformer("snunlp/KR-SBERT-V40K-klueNLI-augSTS")
@@ -11,14 +13,30 @@ kw_model = KeyBERT(sbert_model)
 
 def analyze_resume(content: str) -> ResumeAnalysisResult:
     # TODO: 맞춤법 검사 로직 추가 완료, 키워드 추출, 피드백 로직 추가예정
-    sentences = split_sentence(content)
     grammar_issues = []
     sentence_results = []
+    
+    # 맞춤법 검사
+    try:
+        check_content = spell_checker.check(content)
+        corrected_text = check_content.checked
+
+        sentences = split_sentence(content)
+
+        for sentence in sentences:
+            issues = check_grammar(sentence)
+            grammar_issues.extend(issues)
+
+    except Exception as e:
+        traceback.print_exc()
+        corrected_text = content
+        grammar_issues.append(f"Error : 맞춤법 검사 중 오류가 발생했습니다. 오류 : {e}")
+
+
+    # 문장 분리
+    sentences = split_sentence(corrected_text)
 
     for sentence in sentences:
-        issues = check_grammar(sentence)
-        grammar_issues.extend(issues)
-
         # 키워드 추출
         keywords = extract_keyword(sentence)
         
@@ -32,6 +50,7 @@ def analyze_resume(content: str) -> ResumeAnalysisResult:
         ))
             
     return ResumeAnalysisResult(
+        corrected_text=corrected_text,
         sentences=sentence_results,
         grammar_issues=grammar_issues,
         suggested_sentences=[]
@@ -58,14 +77,22 @@ def extract_keyword(text: str) -> list[str]:
     if not text.strip():
         return []
     try:
+        #stop_words_ko = load_stopwords_from_json()
         keywords = kw_model.extract_keywords(text, 
-                                             keyphrase_ngram_range=(1, 2),
+                                             keyphrase_ngram_range=(2, 3),
                                              stop_words=None,
-                                             top_n=3,
+                                             top_n=4,
                                              use_mmr=True,
-                                             diversity=0.7,
+                                             diversity=0.5,
                                              nr_candidates=30)
         return [kw for kw, _ in keywords]
     except Exception as e:
         traceback.print_exc()
         return []
+    
+    
+def load_stopwords_from_json() -> list[str]:
+    base_dir = os.path.dirname(__file__)
+    filepath = os.path.join(base_dir, "resources", "stop_words_ko.json")
+    with open(filepath, encoding='utf-8') as f:
+        return json.load(f)
