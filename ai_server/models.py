@@ -14,6 +14,7 @@ class SentenceAnalysisItem(BaseModel):
     keywords: List[str]
 
 class ResumeAnalysisResult(BaseModel):
+    original_text: str
     corrected_text: str
     sentences: List[SentenceAnalysisItem]
     grammar_issues: List[str]

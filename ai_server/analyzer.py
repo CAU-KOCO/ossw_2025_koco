@@ -50,6 +50,7 @@ def analyze_resume(content: str) -> ResumeAnalysisResult:
         ))
             
     return ResumeAnalysisResult(
+        original_text=content,
         corrected_text=corrected_text,
         sentences=sentence_results,
         grammar_issues=grammar_issues,
