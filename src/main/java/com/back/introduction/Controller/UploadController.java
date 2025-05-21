@@ -21,22 +21,23 @@ public class UploadController {
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ApiResponse uploadResume(@RequestParam("file") MultipartFile file,
                                     @RequestParam("userId") Long userId) {
-        // 1. 空文件检测
+        // 1. 空文件检测（上传失败，文件不能为空）
         if (file.isEmpty()) {
-            return ApiResponse.error("上传失败，文件不能为空");
+            return ApiResponse.error("Upload failed, file cannot be empty");
         }
 
-        // 2. 检查文件类型是否为 pdf、doc、docx、hwp
+        // 2. 检查文件类型是否为 pdf、doc、docx、hwp（仅支持上传 pdf、word 或 hwp 格式的文件）
         String fileName = file.getOriginalFilename();
         if (!FileTypeChecker.isAllowed(fileName)) {
-            return ApiResponse.error("仅支持上传 pdf、word 或 hwp 格式的文件");
+            return ApiResponse.error("Only supports uploading files in PDF, Word, or HP formats.");
         }
 
         // 3. 执行文件保存及数据库记录
         try {
             return uploadService.saveFile(file, userId);
         } catch (Exception e) {
-            return ApiResponse.error("文件上传失败: " + e.getMessage());
+            return ApiResponse.error("File upload failed: " + e.getMessage());
+            //文件上传失败
         }
     }
 

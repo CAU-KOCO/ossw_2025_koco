@@ -38,14 +38,14 @@ public class AuthControllerTest {
         request.setConfirmPassword("123456");
 
         when(authService.register(any(RegisterRequest.class)))
-                .thenReturn(ApiResponse.success("注册成功", true));
+                .thenReturn(ApiResponse.success("Registration successful", true));
 
         mockMvc.perform(post("/api/auth/register")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.code").value(200))
-                .andExpect(jsonPath("$.message").value("注册成功"))
+                .andExpect(jsonPath("$.message").value("Registration successful"))
                 .andExpect(jsonPath("$.data").value(true));
     }
 
@@ -56,14 +56,14 @@ public class AuthControllerTest {
         request.setPassword("123456");
 
         when(authService.login(any(LoginRequest.class)))
-                .thenReturn(ApiResponse.success("登录成功", "mocked-jwt-token"));
+                .thenReturn(ApiResponse.success("Login successful", "mocked-jwt-token"));
 
         mockMvc.perform(post("/api/auth/login")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.code").value(200))
-                .andExpect(jsonPath("$.message").value("登录成功"))
+                .andExpect(jsonPath("$.message").value("Login successful"))
                 .andExpect(jsonPath("$.data").value("mocked-jwt-token"));
     }
 }

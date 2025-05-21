@@ -19,7 +19,7 @@ public class HistoryService {
      */
     public ApiResponse getUploadHistory(Long userId) {
         List<UploadFile> uploadFiles = uploadFileRepository.findByUserId(userId);
-        return new ApiResponse(true, "查询成功", uploadFiles);
+        return new ApiResponse(true, "Search successful", uploadFiles);
     }
 
     /**
@@ -27,10 +27,10 @@ public class HistoryService {
      */
     public ApiResponse deleteUploadRecord(Long fileId) {
         if (!uploadFileRepository.existsById(fileId)) {
-            return ApiResponse.error("该上传记录不存在");
+            return ApiResponse.error("This upload record does not exist");
         }
 
         uploadFileRepository.deleteById(fileId);
-        return ApiResponse.success("上传记录删除成功", null);
+        return ApiResponse.success("Upload record deleted successfully", null);
     }
 }

@@ -35,7 +35,7 @@ public class UploadControllerTest {
     @Test
     public void testUpdateFavoriteStatus_returns200() throws Exception {
         Mockito.when(uploadService.updateFavoriteStatus(eq(1L), eq(true)))
-                .thenReturn(ApiResponse.success("收藏状态更新成功", null));
+                .thenReturn(ApiResponse.success("Collection status update successful", null));
 
         mockMvc.perform(patch("/api/upload/1/favorite")
                         .param("favorite", "true")
@@ -46,7 +46,7 @@ public class UploadControllerTest {
     @Test
     public void testUpdateCategory_returns200() throws Exception {
         Mockito.when(uploadService.updateCategory(eq(1L), eq("留学")))
-                .thenReturn(ApiResponse.success("分类更新成功", null));
+                .thenReturn(ApiResponse.success("Category update successful", null));
 
         mockMvc.perform(patch("/api/upload/1/category")
                         .param("category", "留学")

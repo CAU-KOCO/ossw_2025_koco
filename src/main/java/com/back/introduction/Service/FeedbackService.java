@@ -24,6 +24,6 @@ public class FeedbackService {
 
         feedbackRepository.save(feedback);
 
-        return new ApiResponse(true, "反馈已成功提交", null);
+        return new ApiResponse(true, "Feedback submitted successfully", null);
     }
 }

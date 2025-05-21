@@ -25,7 +25,7 @@ public class AnalysisService {
         // 如果前端未直接传入内容，通过 fileId 获取文件路径后读取
         if (content == null || content.trim().isEmpty()) {
             if (request.getFileId() == null) {
-                return ApiResponse.error("缺少分析内容或文件 ID");
+                return ApiResponse.error("Missing analytical content or file ID");
             }
 
             String filePath = uploadFileRepository.findById(request.getFileId())
@@ -33,13 +33,13 @@ public class AnalysisService {
                     .orElse(null);
 
             if (filePath == null) {
-                return ApiResponse.error("找不到对应文件路径");
+                return ApiResponse.error("No corresponding file path found");
             }
 
             try {
                 content = java.nio.file.Files.readString(java.nio.file.Path.of(filePath));
             } catch (Exception e) {
-                return ApiResponse.error("读取文件失败：" + e.getMessage());
+                return ApiResponse.error("Failed to read file：" + e.getMessage());
             }
         }
 
@@ -60,6 +60,6 @@ public class AnalysisService {
         // 保存分析结果
         analysisRepository.save(result);
 
-        return ApiResponse.success("分析完成", result);
+        return ApiResponse.success("Analysis complete", result);
     }
 }

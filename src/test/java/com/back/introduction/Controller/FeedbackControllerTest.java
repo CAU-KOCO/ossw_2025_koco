@@ -39,7 +39,7 @@ public class FeedbackControllerTest {
 
         // 模拟服务层返回值
         when(feedbackService.submitFeedback(any(FeedbackRequest.class)))
-                .thenReturn(ApiResponse.success("反馈已成功提交", null));
+                .thenReturn(ApiResponse.success("Feedback submitted successfully", null));
 
         // 执行 POST 请求并断言
         mockMvc.perform(post("/api/feedback/submit")
@@ -47,7 +47,7 @@ public class FeedbackControllerTest {
                         .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.code").value(200))
-                .andExpect(jsonPath("$.message").value("反馈已成功提交"))
+                .andExpect(jsonPath("$.message").value("Feedback submitted successfully"))
                 .andExpect(jsonPath("$.data").doesNotExist());
     }
 }

@@ -4,6 +4,7 @@ import com.back.introduction.Dto.UserUpdateRequest;
 import com.back.introduction.Entity.User;
 import com.back.introduction.Repository.UserRepository;
 import com.back.introduction.Util.ApiResponse;
+import com.back.introduction.Util.PasswordEncoderUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,11 +24,11 @@ public class UserService {
         if (optionalUser.isEmpty()) {
             return ApiResponse.error("未找到对应的用户");
         }
-        return ApiResponse.success("查询成功", optionalUser.get());
+        return ApiResponse.success("Search successful", optionalUser.get());
     }
 
     /**
-     * 更新用户信息（用户名、邮箱）
+     * 更新用户信息（用户名、密码），不允许修改邮箱
      */
     public ApiResponse updateUser(Long userId, UserUpdateRequest request) {
         Optional<User> optionalUser = userRepository.findById(userId);
@@ -36,10 +37,21 @@ public class UserService {
         }
 
         User user = optionalUser.get();
+
+        // 修改用户名
         user.setUsername(request.getUsername());
-        user.setEmail(request.getEmail());
+
+        // 如用户输入旧密码，则验证并修改新密码
+        if (request.getOldPassword() != null && !request.getOldPassword().isEmpty()) {
+            if (!PasswordEncoderUtil.matches(request.getOldPassword(), user.getPassword())) {
+                return ApiResponse.error("旧密码不正确，无法修改密码");
+            }
+
+            // 设置加密后的新密码
+            user.setPassword(PasswordEncoderUtil.encode(request.getNewPassword()));
+        }
 
         userRepository.save(user);
-        return ApiResponse.success("用户信息更新成功", user);
+        return ApiResponse.success("User update successful", user);
     }
 }

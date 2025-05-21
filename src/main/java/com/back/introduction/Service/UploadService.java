@@ -47,30 +47,32 @@ public class UploadService {
 
         uploadFileRepository.save(uploadFile);
 
-        // 5. 返回成功响应
-        return ApiResponse.success("文件上传成功", uploadFile);
+        // 5. 返回成功响应（文件上传成功）
+        return ApiResponse.success("File upload successful", uploadFile);
     }
 
     public ApiResponse updateFavoriteStatus(Long fileId, boolean favorite) {
         UploadFile uploadFile = uploadFileRepository.findById(fileId).orElse(null);
         if (uploadFile == null) {
-            return ApiResponse.error("文件不存在，无法更新收藏状态");
+            return ApiResponse.error("File not found, unable to update bookmark status");//文件不存在，无法更新收藏状态
         }
 
         uploadFile.setFavorite(favorite);
         uploadFileRepository.save(uploadFile);
-        return ApiResponse.success("收藏状态更新成功", uploadFile);
+        return ApiResponse.success("Collection status update successful", uploadFile);
     }
 
     public ApiResponse updateCategory(Long fileId, String category) {
         UploadFile uploadFile = uploadFileRepository.findById(fileId).orElse(null);
         if (uploadFile == null) {
-            return ApiResponse.error("文件不存在，无法更新分类");
+            return ApiResponse.error("File not found, unable to update category");
         }
+//        文件不存在，无法更新分类
 
         uploadFile.setCategory(category);
         uploadFileRepository.save(uploadFile);
-        return ApiResponse.success("分类更新成功", uploadFile);
+        return ApiResponse.success("Category update successful", uploadFile);
+        //分类
     }
 
 }

@@ -1,21 +1,18 @@
 package com.back.introduction.Dto;
 
 public class UserUpdateRequest {
-
     private String username;
-    private String email;
+    private String oldPassword;
+    private String newPassword;
 
-    // 默认构造函数（必需用于反序列化）
-    public UserUpdateRequest() {
-    }
+    public UserUpdateRequest() {}
 
-    // 全参构造函数
-    public UserUpdateRequest(String username, String email) {
+    public UserUpdateRequest(String username, String oldPassword, String newPassword) {
         this.username = username;
-        this.email = email;
+        this.oldPassword = oldPassword;
+        this.newPassword = newPassword;
     }
 
-    // Getter & Setter
     public String getUsername() {
         return username;
     }
@@ -24,11 +21,19 @@ public class UserUpdateRequest {
         this.username = username;
     }
 
-    public String getEmail() {
-        return email;
+    public String getOldPassword() {
+        return oldPassword;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setOldPassword(String oldPassword) {
+        this.oldPassword = oldPassword;
+    }
+
+    public String getNewPassword() {
+        return newPassword;
+    }
+
+    public void setNewPassword(String newPassword) {
+        this.newPassword = newPassword;
     }
 }

@@ -34,7 +34,7 @@ public class HistoryControllerTest {
     @Test
     public void testGetUploadHistory_returns200() throws Exception {
         Mockito.when(historyService.getUploadHistory(eq(1L)))
-                .thenReturn(ApiResponse.success("查询成功", null));
+                .thenReturn(ApiResponse.success("Search successful", null));
 
         mockMvc.perform(get("/api/history/uploads/1"))
                 .andExpect(status().isOk());
@@ -43,7 +43,7 @@ public class HistoryControllerTest {
     @Test
     public void testDeleteUploadRecord_returns200() throws Exception {
         Mockito.when(historyService.deleteUploadRecord(eq(2L)))
-                .thenReturn(ApiResponse.success("删除成功", null));
+                .thenReturn(ApiResponse.success("Delete successful", null));
 
         mockMvc.perform(delete("/api/history/uploads/2"))
                 .andExpect(status().isOk());

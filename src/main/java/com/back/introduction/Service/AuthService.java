@@ -28,12 +28,12 @@ public class AuthService {
     public ApiResponse register(RegisterRequest request) {
         // 判断邮箱是否已存在
         if (userRepository.existsByEmail(request.getEmail())) {
-            throw new UserAlreadyExistsException("该邮箱已被注册");
+            throw new UserAlreadyExistsException("This email address has been registered.");
         }
 
         // 校验密码是否一致
         if (!request.getPassword().equals(request.getConfirmPassword())) {
-            return ApiResponse.error("两次输入的密码不一致");
+            return ApiResponse.error("The passwords entered twice do not match.");
         }
 
         // 加密密码
@@ -47,7 +47,7 @@ public class AuthService {
         // 保存用户
         userRepository.save(user);
 
-        return ApiResponse.success("注册成功",true);
+        return ApiResponse.success("Registration successful",true);
     }
 
     /**
@@ -57,19 +57,19 @@ public class AuthService {
         Optional<User> optionalUser = userRepository.findByEmail(request.getEmail());
 
         if (optionalUser.isEmpty()) {
-            return ApiResponse.error("该邮箱未注册");
+            return ApiResponse.error("This email address is not registered.");
         }
 
         User user = optionalUser.get();
 
         // 验证密码
         if (!PasswordEncoderUtil.matches(request.getPassword(), user.getPassword())) {
-            return ApiResponse.error("密码错误");
+            return ApiResponse.error("Password error");
         }
 
         // 登录成功，生成 JWT token
         String token = jwtUtil.generateToken(user.getEmail());
 
-        return new ApiResponse(true, "登录成功", token);
+        return new ApiResponse(true, "Login successful", token);
     }
 }

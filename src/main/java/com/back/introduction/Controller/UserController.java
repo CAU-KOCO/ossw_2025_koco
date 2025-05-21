@@ -14,7 +14,7 @@ public class UserController {
     private UserService userService;
 
     /**
-     * 获取当前用户信息（用于“个人信息”页面）
+     * 获取当前用户信息
      */
     @GetMapping("/{userId}")
     public ApiResponse getUserInfo(@PathVariable Long userId) {
@@ -22,7 +22,7 @@ public class UserController {
     }
 
     /**
-     * 修改用户信息（邮箱、用户名）
+     * 修改用户名和密码（需验证旧密码）
      */
     @PutMapping("/{userId}")
     public ApiResponse updateUser(@PathVariable Long userId, @RequestBody UserUpdateRequest request) {
