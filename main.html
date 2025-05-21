@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">CAU AI 분석 플랫폼</h1>
+            <nav>
+                <ul>
+                    <li><a href="profile.html" class="nav-btn"><i class="fas fa-user-circle"></i> 개인 프로필</a></li>
+                    <li><a href="records.html" class="nav-btn"><i class="fas fa-history"></i> 기록 보기</a></li>
+                    <li><a href="#" id="logout-btn" class="nav-btn"><i class="fas fa-sign-out-alt"></i> 로그아웃</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container main-container">
+        <div class="upload-card">
+            <h2><i class="fas fa-cloud-upload-alt"></i> 파일 업로드 분석</h2>
+            <div class="upload-area" id="upload-area">
+                <div class="upload-placeholder" id="upload-placeholder">
+                    <p>여기에 파일을 끌어다 놓거나 클릭하여 업로드</p>
+                    <p class="small">.txt 또는 .docx 파일 지원</p>
+                </div>
+                <div class="upload-progress" id="upload-progress">
+                    <div class="spinner"></div>
+                    <p>분석 중...</p>
+                </div>
+                <input type="file" id="file-input" accept=".txt,.docx" hidden>
+            </div>
+        </div>
+
+        <div class="results-container">
+            <div class="result-card">
+                <h3><i class="fas fa-chart-bar"></i> 분석 결과</h3>
+                <div class="result-content" id="analysis-result">
+                    <p class="placeholder-text">파일 업로드 후 분석 결과가 표시됩니다</p>
+                </div>
+            </div>
+
+            <div class="feedback-card">
+                <h3><i class="fas fa-comment-dots"></i> 피드백</h3>
+                <div class="feedback-content" id="feedback-content">
+                    <p class="placeholder-text">파일 업로드 후 피드백 내용이 표시됩니다</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/animation.js"></script>
+</body>
+</html>

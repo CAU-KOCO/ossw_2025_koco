@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">응답 기록 클릭</h1>
+            <nav>
+                <ul>
+                    <li><a href="records.html" class="nav-btn"><i class="fas fa-arrow-left"></i> 이전 페이지로 돌아가기</a></li>
+                    <li><a href="#" id="logout-btn" class="nav-btn"><i class="fas fa-sign-out-alt"></i> 로그아웃</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container detail-container">
+        <div class="detail-header">
+            <span class="detail-date">시간 10월 17일</span>
+        </div>
+        
+        <div class="detail-content">
+            <div class="detail-card">
+                <h3>분석 결과</h3>
+                <div class="detail-text" id="detail-analysis">
+                    <p>텍스트</p>
+                </div>
+            </div>
+            
+            <div class="detail-card">
+                <h3>피드백</h3>
+                <div class="detail-text" id="detail-feedback">
+                    <p>텍스트</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

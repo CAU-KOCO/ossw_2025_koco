@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기록</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<header class="navbar">
+    <div class="nav-container">
+        <h1 class="logo">응답 기록 미리보기</h1>
+        <nav>
+            <ul>
+                <li><a href="main.html" class="nav-btn"><i class="fas fa-home"></i> 홈으로 돌아가기</a></li>
+                <li><a href="#" id="logout-btn" class="nav-btn"><i class="fas fa-sign-out-alt"></i> 로그아웃</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container records-container">
+    <h2>응답 기록</h2>
+
+    <div class="record-item">
+        <div class="record-header">
+            <span class="record-date">시간 10월 17일</span>
+            <a href="detail.html?id=1" class="btn btn-small"><i class="fas fa-eye"></i> 상세 보기</a>
+        </div>
+        <div class="record-content">
+            <div class="record-analysis">
+                <h4>분석 결과</h4>
+                <div class="record-text highlighted">텍스트</div>
+            </div>
+            <div class="record-feedback">
+                <h4>피드백</h4>
+                <div class="record-text">텍스트</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

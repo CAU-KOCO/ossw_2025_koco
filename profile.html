@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">CAU AI 분석 플랫폼</h1>
+            <nav>
+                <ul>
+                    <li><a href="main.html" class="nav-btn"><i class="fas fa-home"></i> 홈으로</a></li>
+                    <li><a href="records.html" class="nav-btn"><i class="fas fa-history"></i> 기록 보기</a></li>
+                    <li><a href="#" id="logout-btn" class="nav-btn"><i class="fas fa-sign-out-alt"></i> 로그아웃</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container main-container">
+        <div class="profile-card">
+            <h2><i class="fas fa-user-cog"></i> 개인 프로필</h2>
+            <div class="profile-content">
+                <form id="profile-form">
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="profile-username" placeholder="사용자 이름" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="profile-email" placeholder="이메일" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="profile-password" placeholder="새 비밀번호">
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="profile-password-confirm" placeholder="비밀번호 확인">
+                    </div>
+                    <p class="small">비밀번호를 변경하지 않으려면 비밀번호 필드를 비워 두세요</p>
+                    <button type="submit" class="btn btn-primary">프로필 업데이트</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

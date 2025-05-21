@@ -1,0 +1,420 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+:root {
+    --primary-color: #0066b3; /* CAU蓝色 */
+    --secondary-color: #f8f9fa;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --light-text: #fff;
+    --border-color: #ddd;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/cau-logo.png');
+    background-repeat: no-repeat;
+    background-position: 95% 95%;
+    background-size: 300px; /* 增大背景水印图标尺寸 */
+    opacity: 0.05;
+    z-index: -1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 导航栏样式 */
+.navbar {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #004a8c 100%);
+    color: var(--light-text);
+    padding: 15px 0;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.navbar::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #fff, transparent);
+    opacity: 0.3;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.logo::before {
+    content: "";
+    display: inline-block;
+    width: 45px; /* 增大导航栏图标尺寸 */
+    height: 45px; /* 增大导航栏图标尺寸 */
+    background-image: url('../images/cau-logo-small.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    padding: 8px 15px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    opacity: 1;
+}
+
+/* 导航按钮样式 */
+.nav-btn {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 15px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+.nav-btn i {
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+/* 查看详情按钮样式 */
+.btn-small {
+    padding: 8px 15px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-small i {
+    font-size: 14px;
+}
+
+/* 确保查看详情按钮在右侧 */
+.record-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* 卡片样式 */
+.login-card, .register-card, .upload-card, .result-card, .feedback-card, .record-item, .detail-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 30px;
+    margin-bottom: 25px;
+    border-top: 4px solid var(--primary-color);
+}
+
+/* 删除卡片悬停动画效果 */
+
+.login-card, .register-card {
+    max-width: 400px;
+    margin: 100px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-card::before, .register-card::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 100px;
+    height: 100px;
+    background-image: url('../images/cau-logo-small.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    transform: rotate(30deg);
+}
+
+/* 按钮样式优化 */
+.btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 删除按钮悬停动画效果 */
+.btn:hover {
+    background-color: #005091;
+}
+
+/* 上传区域优化 */
+.upload-area {
+    border: 2px dashed var(--border-color);
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.upload-area:hover {
+    border-color: var(--primary-color);
+}
+
+/* 上传占位符和进度样式 */
+.upload-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.upload-placeholder p {
+    margin: 5px 0;
+    color: var(--text-color);
+}
+
+.upload-placeholder p.small {
+    font-size: 14px;
+    color: #777;
+}
+
+/* 上传进度样式 - 修复bug */
+.upload-progress {
+    display: none; /* 默认隐藏 */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.upload-progress p {
+    margin-top: 15px;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* 加载动画样式 */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(0, 102, 179, 0.2);
+    border-radius: 50%;
+    border-top-color: var(--primary-color);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 拖拽效果 */
+.upload-area.dragover {
+    background-color: rgba(0, 102, 179, 0.05);
+    border-color: var(--primary-color);
+}
+
+/* 结果容器优化 */
+.results-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.result-content, .feedback-content, .record-text, .detail-text {
+    min-height: 150px;
+    max-height: none;
+    padding: 20px;
+    background-color: rgba(249, 249, 249, 0.8);
+    border-radius: 8px;
+    overflow-y: auto;
+    border-left: 3px solid var(--primary-color);
+}
+
+/* 删除内容区域悬停效果 */
+
+h2, h3, h4 {
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* 表单样式 */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+    border-color: #4e73df;
+    outline: none;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-color);
+    font-size: 18px; /* 增大输入框图标尺寸 */
+}
+
+.input-group input {
+    padding-left: 45px; /* 为图标留出空间 */
+}
+
+.btn-primary {
+    width: 100%;
+}
+
+.register-link, .back-link {
+    text-align: right;
+    margin-top: 15px;
+}
+
+.register-link a, .back-link a {
+    color: #4e73df;
+    text-decoration: none;
+}
+
+.register-link a:hover, .back-link a:hover {
+    text-decoration: underline;
+}
+
+/* 登录界面图标样式 */
+.login-icon {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    background-image: url('../images/cau-logo-small.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.login-card h2 i, .register-card h2 i {
+    font-size: 24px; /* 增大标题图标尺寸 */
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+/* 个人资料卡片样式 */
+.profile-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.profile-card h2 {
+    color: #1a237e;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.profile-card h2 i {
+    margin-right: 10px;
+    color: #3f51b5;
+}
+
+.profile-content {
+    padding: 15px 0;
+}
+
+.profile-form .small {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 10px 0 20px;
+    text-align: center;
+}
