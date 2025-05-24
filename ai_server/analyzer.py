@@ -2,19 +2,26 @@ from models import ResumeAnalysisResult, FeedbackItem, SentenceAnalysisItem
 from hanspell import spell_checker
 from keybert import KeyBERT
 from sentence_transformers import SentenceTransformer
+from dotenv import load_dotenv, find_dotenv
+import openai
 import traceback
 import kss
 import json
 import os
 
 
+dotenv_path = find_dotenv()
+load_dotenv(dotenv_path)
+
+openai.api_key = os.getenv("OPENAI_API_KEY")
+gpt_model = "gpt-3.5-turbo"
+
 sbert_model = SentenceTransformer("snunlp/KR-SBERT-V40K-klueNLI-augSTS")
 kw_model = KeyBERT(sbert_model)
 
 def analyze_resume(content: str) -> ResumeAnalysisResult:
-    # TODO: 맞춤법 검사 로직 추가 완료, 키워드 추출, 피드백 로직 추가예정
+    # TODO: 맞춤법 검사 로직 추가 완료, 키워드 추출, 피드백 로직 추가 완료
     grammar_issues = []
-    sentence_results = []
     
     # 맞춤법 검사
     try:
@@ -32,20 +39,18 @@ def analyze_resume(content: str) -> ResumeAnalysisResult:
         corrected_text = content
         grammar_issues.append(f"Error : 맞춤법 검사 중 오류가 발생했습니다. 오류 : {e}")
 
+    sentence_results = []
 
-    # 문장 분리
-    sentences = split_sentence(corrected_text)
-
-    for sentence in sentences:
+    for sent in split_sentence(corrected_text):
         # 키워드 추출
-        keywords = extract_keyword(sentence)
+        keywords = extract_keyword(sent)
         
         # 피드백 생성
-        feedback = []
+        comment = generate_feedback(sent)
 
         sentence_results.append(SentenceAnalysisItem(
-            sentence=sentence,
-            feedback=feedback,
+            sentence=sent,
+            feedback=[comment],
             keywords=keywords
         ))
             
@@ -97,3 +102,20 @@ def load_stopwords_from_json() -> list[str]:
     filepath = os.path.join(base_dir, "resources", "stop_words_ko.json")
     with open(filepath, encoding='utf-8') as f:
         return json.load(f)
+    
+def generate_feedback(sentence: str) -> str:
+    try:
+        prompt = (
+            "아래 문장의 장점과 개선할 점을 간단히 알려줘:\n"  
+            f"\"{sentence}\""
+        )
+        response = openai.chat.completions.create(
+            model = gpt_model,
+            messages =[{"role": "user", "content": prompt}],
+            max_tokens=250,
+            temperature=0.7
+        )
+        return response.choices[0].message.content.strip()
+    except Exception as e:
+        traceback.print_exc()
+        return f"Error : 피드백 생성 중 오류가 발생했습니다. 오류 : {e}"
