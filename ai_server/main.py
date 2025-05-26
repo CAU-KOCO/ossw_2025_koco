@@ -13,4 +13,5 @@ def analyze_resume_endpoint(resume_input: ResumeInput):
 # 1. 맞춤법 검사 추가 완료
 # 2. 문장 분리 추가 완료
 # 3. 키워드 추출 추가 완료
-# 키워드 추출 불용어 stopwords-ko 사용
+# 4. 피드백 생성 추가 완료
+# 키워드 추출 불용어 stopwords-ko 사용 -> 사용 안 하는게 품질 좋아서 사용 x
