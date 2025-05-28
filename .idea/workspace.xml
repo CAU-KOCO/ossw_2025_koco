@@ -5,27 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03849a9a-b28b-475c-b5c0-f437e1f68826" name="更改" comment="add file">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/back/introduction/Config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/back/introduction/Util/FileTypeCheckerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/back/introduction/Controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/introduction/Controller/UploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/introduction/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/introduction/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/introduction/Dto/UserUpdateRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/introduction/Dto/UserUpdateRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/introduction/Service/AnalysisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/introduction/Service/AnalysisService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/introduction/Service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/introduction/Service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/introduction/Service/FeedbackService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/introduction/Service/FeedbackService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/introduction/Service/HistoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/introduction/Service/HistoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/introduction/Service/UploadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/introduction/Service/UploadService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/introduction/Service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/introduction/Service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/back/introduction/Controller/AuthControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/back/introduction/Controller/AuthControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/back/introduction/Controller/FeedbackControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/back/introduction/Controller/FeedbackControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/back/introduction/Controller/HistoryControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/back/introduction/Controller/HistoryControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/back/introduction/Controller/UploadControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/back/introduction/Controller/UploadControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/back/introduction/Controller/UserControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/back/introduction/Controller/UserControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/back/introduction/Dto/UserUpdateRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/back/introduction/Dto/UserUpdateRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/introduction/Util/FileTypeChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/introduction/Util/FileTypeChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/back/introduction/Controller/UploadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/back/introduction/Controller/UploadController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/back/introduction/Service/AnalysisService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/back/introduction/Service/AnalysisService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/back/introduction/Service/AuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/back/introduction/Service/AuthService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/back/introduction/Service/FeedbackService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/back/introduction/Service/FeedbackService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/back/introduction/Service/HistoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/back/introduction/Service/HistoryService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/back/introduction/Service/UploadService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/back/introduction/Service/UploadService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/back/introduction/Service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/back/introduction/Service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/back/introduction/Util/FileTypeChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/back/introduction/Util/FileTypeChecker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/back/introduction/Controller/AuthControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/back/introduction/Controller/AuthControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/back/introduction/Controller/FeedbackControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/back/introduction/Controller/FeedbackControllerTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/back/introduction/Controller/HistoryControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/back/introduction/Controller/HistoryControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/back/introduction/Controller/UploadControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/back/introduction/Controller/UploadControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/back/introduction/Controller/UserControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/back/introduction/Controller/UserControllerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +101,7 @@
     "JUnit.FeedbackRequestTest.executor": "Run",
     "JUnit.FeedbackServiceTest.executor": "Run",
     "JUnit.FeedbackTest.executor": "Run",
+    "JUnit.FileTypeCheckerTest.executor": "Run",
     "JUnit.HistoryControllerTest.executor": "Run",
     "JUnit.HistoryServiceTest.executor": "Run",
     "JUnit.LoginRequestTest.executor": "Run",
@@ -151,7 +148,22 @@
       <recent name="com.back.introduction" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HistoryControllerTest">
+  <component name="RunManager" selected="JUnit.FileTypeCheckerTest">
+    <configuration name="FileTypeCheckerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Self-introduction" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.back.introduction.Util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.back.introduction.Util" />
+      <option name="MAIN_CLASS_NAME" value="com.back.introduction.Util.FileTypeCheckerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HistoryControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Self-introduction" />
       <extension name="coverage">
@@ -162,21 +174,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.back.introduction.Controller" />
       <option name="MAIN_CLASS_NAME" value="com.back.introduction.Controller.HistoryControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HistoryServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Self-introduction" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.back.introduction.Service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.back.introduction.Service" />
-      <option name="MAIN_CLASS_NAME" value="com.back.introduction.Service.HistoryServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -236,8 +233,8 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.FileTypeCheckerTest" />
       <item itemvalue="JUnit.HistoryControllerTest" />
-      <item itemvalue="JUnit.HistoryServiceTest" />
       <item itemvalue="JUnit.UploadServiceTest" />
       <item itemvalue="JUnit.UserControllerTest" />
       <item itemvalue="JUnit.UserControllerTest.testUpdateUserInfo_withPasswordChange_success" />
@@ -245,11 +242,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.FileTypeCheckerTest" />
         <item itemvalue="JUnit.HistoryControllerTest" />
         <item itemvalue="JUnit.UserControllerTest.testUpdateUserInfo_withPasswordChange_success" />
         <item itemvalue="JUnit.UserControllerTest" />
         <item itemvalue="JUnit.UploadServiceTest" />
-        <item itemvalue="JUnit.HistoryServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -277,7 +274,7 @@
       <workItem from="1747348505306" duration="2024000" />
       <workItem from="1747437314049" duration="7078000" />
       <workItem from="1747447171451" duration="476000" />
-      <workItem from="1747455921378" duration="11364000" />
+      <workItem from="1747455921378" duration="16579000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />

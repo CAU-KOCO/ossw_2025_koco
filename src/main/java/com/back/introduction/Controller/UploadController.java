@@ -26,10 +26,10 @@ public class UploadController {
             return ApiResponse.error("Upload failed, file cannot be empty");
         }
 
-        // 2. 检查文件类型是否为 pdf、doc、docx、hwp（仅支持上传 pdf、word 或 hwp 格式的文件）
+        // 2. 仅支持上传 pdf、txt 格式的文件
         String fileName = file.getOriginalFilename();
         if (!FileTypeChecker.isAllowed(fileName)) {
-            return ApiResponse.error("Only supports uploading files in PDF, Word, or HP formats.");
+            return ApiResponse.error("pdf나 txt 형식의 파일만 업로드 지원");
         }
 
         // 3. 执行文件保存及数据库记录
