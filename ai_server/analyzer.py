@@ -3,6 +3,7 @@ from hanspell import spell_checker
 from keybert import KeyBERT
 from sentence_transformers import SentenceTransformer
 from dotenv import load_dotenv, find_dotenv
+from docx import Document
 import openai
 import traceback
 import kss
@@ -119,3 +120,32 @@ def generate_feedback(sentence: str) -> str:
     except Exception as e:
         traceback.print_exc()
         return f"Error : 피드백 생성 중 오류가 발생했습니다. 오류 : {e}"
+    
+def load_file_content(path: str) -> str:
+    _, ext = os.path.splitext(path.lower())
+    if ext == ".txt":
+        with open(path, "r", encoding="utf-8") as f:
+            return f.read()
+    elif ext == ".docx":
+        #
+        print(f"[load_file_content] DOCX 파싱 시작: {path}") # 디버깅
+        try:
+            doc = Document(path)
+        except Exception as e:
+            print(f"[load_file_content] DOCX 파싱 오류: {e}")
+            raise
+        #
+        #doc = Document(path) 원 함수
+        #return "\n".join([p.text for p in doc.paragraphs])
+
+        text = "\n".join(p.text for p in doc.paragraphs)
+        print(f"[load_file_content] DOCX 파싱 완료, 길이={len(text)}")
+        return text
+    else:
+        raise ValueError(f"지원하지 않는 파일 형식입니다: {ext}")
+    
+
+    
+def analyze_file(path: str) -> ResumeAnalysisResult:
+    text = load_file_content(path)
+    return analyze_resume(text)
