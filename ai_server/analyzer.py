@@ -123,27 +123,20 @@ def generate_feedback(sentence: str) -> str:
     
 def load_file_content(path: str) -> str:
     _, ext = os.path.splitext(path.lower())
+    
     if ext == ".txt":
         with open(path, "r", encoding="utf-8") as f:
             return f.read()
+    
     elif ext == ".docx":
-        #
-        print(f"[load_file_content] DOCX 파싱 시작: {path}") # 디버깅
         try:
             doc = Document(path)
+            return "\n".join(p.text for p in doc.paragraphs if p.text.strip())
         except Exception as e:
-            print(f"[load_file_content] DOCX 파싱 오류: {e}")
-            raise
-        #
-        #doc = Document(path) 원 함수
-        #return "\n".join([p.text for p in doc.paragraphs])
-
-        text = "\n".join(p.text for p in doc.paragraphs)
-        print(f"[load_file_content] DOCX 파싱 완료, 길이={len(text)}")
-        return text
+            raise RuntimeError(f"DOCX 파싱 중 오류 발생: {e}")
+    
     else:
         raise ValueError(f"지원하지 않는 파일 형식입니다: {ext}")
-    
 
     
 def analyze_file(path: str) -> ResumeAnalysisResult:
