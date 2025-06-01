@@ -5,23 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03849a9a-b28b-475c-b5c0-f437e1f68826" name="更改" comment="add file">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/back/introduction/Config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/back/introduction/Util/FileTypeCheckerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/introduction/Controller/UploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/introduction/Controller/UploadController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/back/introduction/Util/FileTypeChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/back/introduction/Util/FileTypeChecker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/init.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/back/introduction/Controller/UploadController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/back/introduction/Controller/UploadController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/back/introduction/Service/AnalysisService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/back/introduction/Service/AnalysisService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/back/introduction/Service/AuthService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/back/introduction/Service/AuthService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/back/introduction/Service/FeedbackService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/back/introduction/Service/FeedbackService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/back/introduction/Service/HistoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/back/introduction/Service/HistoryService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/back/introduction/Service/UploadService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/back/introduction/Service/UploadService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/back/introduction/Util/FileTypeChecker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/back/introduction/Util/FileTypeChecker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/back/introduction/Controller/AuthControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/back/introduction/Controller/AuthControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/back/introduction/Controller/FeedbackControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/back/introduction/Controller/FeedbackControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/back/introduction/Controller/HistoryControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/back/introduction/Controller/HistoryControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/init.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +120,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "show.migrate.to.gradle.popup": "false",
     "vue.rearranger.settings.migration": "true"
   },
@@ -148,7 +135,7 @@
       <recent name="com.back.introduction" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FileTypeCheckerTest">
+  <component name="RunManager" selected="Spring Boot.AppApplication">
     <configuration name="FileTypeCheckerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Self-introduction" />
       <extension name="coverage">
@@ -274,7 +261,7 @@
       <workItem from="1747348505306" duration="2024000" />
       <workItem from="1747437314049" duration="7078000" />
       <workItem from="1747447171451" duration="476000" />
-      <workItem from="1747455921378" duration="16579000" />
+      <workItem from="1747455921378" duration="23174000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
