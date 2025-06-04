@@ -11,7 +11,7 @@
 |:---:|:---:|:---:|:---:|
 |<img width="160px" src="https://avatars.githubusercontent.com/u/81153530?v=4"/>|<img width="160px" src="https://avatars.githubusercontent.com/u/78198528?v=4"/>|<img width="160px" src="https://avatars.githubusercontent.com/u/92364747?v=4"/>|<img width="160px" src="https://avatars.githubusercontent.com/u/76274305?v=4"/>|
 |[@mozdw](https://github.com/mozdw)|[@lyu](https://github.com/unmiusers)|[@aoge6788](https://github.com/aoge6788)|[@dlgusxor12](https://github.com/dlgusxor12)|
-|Documentation|Frontend Dev|Backend Dev|PM, Server Dev|
+|Documentation|Backend Dev|Frontend Dev|PM, Server Dev|
 
 
 ## 주요 기능
