@@ -12,6 +12,7 @@ class SentenceAnalysisItem(BaseModel):
     sentence: str
     feedback: List[str]
     keywords: List[str]
+    readability_score: float    
 
 class ResumeAnalysisResult(BaseModel):
     original_text: str
