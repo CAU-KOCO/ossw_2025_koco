@@ -53,6 +53,9 @@ def analyze_resume(content: str) -> ResumeAnalysisResult:
 
         sentences = split_sentence(content)
 
+        # 문장 추천
+        suggest_sentence = suggest_sentences(corrected_text)
+
         for sentence in sentences:
             issues = check_grammar(sentence)
             grammar_issues.extend(issues)
@@ -86,7 +89,7 @@ def analyze_resume(content: str) -> ResumeAnalysisResult:
         corrected_text=corrected_text,
         sentences=sentence_results,
         grammar_issues=grammar_issues,
-        suggested_sentences=[]
+        suggested_sentences= suggest_sentence
     )
 
 # 문장 분리
@@ -150,6 +153,36 @@ def generate_feedback(sentence: str) -> str:
     except Exception as e:
         traceback.print_exc()
         return f"Error : 피드백 생성 중 오류가 발생했습니다. 오류 : {e}"
+    
+def suggest_sentences(text: str) -> list[str]:
+    try:
+        prompt = '''당신은 자기소개서를 분석해서 자기소개서에 어떤 문장을 추가하면 좋을지 추천해주는 역할을 합니다.
+        자기소개서의 문장을 분석해서, 어떤 문장을 추가하면 좋을지 추천해 주세요.'''
+        instructions = "다음 자기소개서를 전체적으로 분석한 뒤, 자기소개서 내 추가하면 좋을 문장을 다음과 같이 추천해주세요. 추천해주는 문장은 입력받은 자기소개서에 바로 사용할 수 있는 문장이여야 합니다.\n" \
+        "1. 문장 길이는 20자 이상 50자 이하로 작성해주세요.\n" \
+        "2. 문장은 자기소개서의 주제와 관련이 있어야 합니다.\n" \
+        "3. 문장은 긍정적이고 전문적인 어조로 작성해주세요.\n" \
+        "4. 문장은 자기소개서의 흐름에 자연스럽게 녹아들 수 있도록 작성해주세요.\n" \
+        "5. 문장은 자기소개서의 내용과 중복되지 않도록 작성해주세요.\n" \
+        "위 조건을 모두 만족하는 문장 5개를 추천해주세요. 결과는 다음과 같이 설명을 제외하고 문장만 출력해주세요.\n" \
+        "1. 문장, 2. 문장, 3. 문장, 4. 문장, 5. 문장"
+
+        response = openai.chat.completions.create(
+            model=gpt_model,
+            messages=[
+                {"role": "system", "content": prompt},
+                {"role": "user", "content": f"{instructions}\n\n{text}"}
+            ],
+            max_tokens=256,
+            temperature=0.7
+        )
+        suggestions = response.choices[0].message.content.strip().split('\n')
+        suggestions = [s.strip() for s in suggestions if s.strip()]
+        return suggestions[:5]  # 최대 5개 문장 추천
+    except Exception as e:
+        traceback.print_exc()
+        return []
+
     
 def load_file_content(path: str) -> str:
     _, ext = os.path.splitext(path.lower())
