@@ -56,6 +56,9 @@ def analyze_resume(content: str) -> ResumeAnalysisResult:
         # 문장 추천
         suggest_sentence = suggest_sentences(corrected_text)
 
+        # 전체 피드백 생성
+        overall_feedback = generate_overall_feedback(corrected_text)
+
         for sentence in sentences:
             issues = check_grammar(sentence)
             grammar_issues.extend(issues)
@@ -89,7 +92,8 @@ def analyze_resume(content: str) -> ResumeAnalysisResult:
         corrected_text=corrected_text,
         sentences=sentence_results,
         grammar_issues=grammar_issues,
-        suggested_sentences= suggest_sentence
+        suggested_sentences= suggest_sentence,
+        overall_feedback=overall_feedback
     )
 
 # 문장 분리
@@ -139,13 +143,20 @@ def load_stopwords_from_json() -> list[str]:
 # 피드백 생성    
 def generate_feedback(sentence: str) -> str:
     try:
-        prompt = (
-            "아래 문장의 장점과 개선할 점을 간단히 알려줘:\n"  
+        prompt = '''당신은 자기소개서의 문장을 분석해서 피드백을 제공하는 역할을 합니다.
+        자기소개서의 문장을 분석해서, 장점과 개선점을 제공해주세요.'''
+        instruction = (
+            "아래 문장의 장점과 개선할 점을 각각 150자 이내로 알려주세요.:\n"
+            "분석 결과는 친절한 어조로 작성해주세요.\n"
+            "결과는 다음과 같은 형식으로 작성해주세요.\n"
+            "1. 장점 : 장점 피드백, 2. 개선점 : 개선점 피드백\n\n"  
             f"\"{sentence}\""
         )
         response = openai.chat.completions.create(
             model = gpt_model,
-            messages =[{"role": "user", "content": prompt}],
+            messages =[{"role": "system", "content": prompt},
+                       {"role": "user", "content": instruction}]
+                    ,
             max_tokens=256,
             temperature=0.7
         )
@@ -153,6 +164,34 @@ def generate_feedback(sentence: str) -> str:
     except Exception as e:
         traceback.print_exc()
         return f"Error : 피드백 생성 중 오류가 발생했습니다. 오류 : {e}"
+    
+def generate_overall_feedback(text: str) -> str:
+    try:
+        prompt = '''당신은 자기소개서를 분석해서 전체적인 자기소개서의 장점, 개선점, 총 점수를 제공하는 역할을 합니다.
+        자기소개서의 문장을 분석해서, 자기소개서의 전체적인 피드백을 제공해주세요.'''
+        instruction = (
+            "아래 자기소개서를 분석해서 전체적인 피드백을 제공해주세요.\n"
+            "피드백은 다음과 같은 형식으로 작성해주세요:\n"
+            "1. 장점: 자기소개서의 강점이나 긍정적인 요소를 강조합니다. 200자 이내로 작성해주세요.\n"
+            "2. 개선점: 자기소개서에서 개선이 필요한 부분을 지적합니다. 200자 이내로 작성해주세요.\n"
+            "3. 총 점수: 자기소개서에 대한 종합적인 평가를 제공합니다.\n\n"
+            "총 점수는 0부터 100까지의 숫자로 0~20은 매우 부족함, 21~40은 부족함, 41~60은 보통, 61~80은 좋음, 81~100은 매우 좋음을 의미합니다.\n"
+            "출력 예시\n"
+            "1. 장점 : 장점 피드백, 2. 개선점 : 개선점 피드백, 3. 총 점수 : 50(보통)\n"
+            f"자기소개서 내용:\n{text}"
+        )
+        response = openai.chat.completions.create(
+            model=gpt_model,
+            messages=[{"role": "system", "content": prompt}
+                      , {"role": "user", "content": instruction}],
+            max_tokens=512,
+            temperature=0.7
+        )
+        return response.choices[0].message.content.strip()
+    except Exception as e:
+        traceback.print_exc()
+        return f"Error : 전체 피드백 생성 중 오류가 발생했습니다. 오류 : {e}"
+
     
 def suggest_sentences(text: str) -> list[str]:
     try:

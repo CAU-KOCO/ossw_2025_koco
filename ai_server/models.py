@@ -20,3 +20,4 @@ class ResumeAnalysisResult(BaseModel):
     sentences: List[SentenceAnalysisItem]
     grammar_issues: List[str]
     suggested_sentences: List[str]
+    overall_feedback: str
