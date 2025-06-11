@@ -8,7 +8,7 @@ import traceback
 
 app = FastAPI(
     title="Resume Analysis API",
-    description="이력서 분석을 위한 API 서버",
+    description="자기소개서 분석을 위한 API 서버",
     version="1.0.0"
 )
 
